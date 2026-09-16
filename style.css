@@ -582,3 +582,80 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+/* --- תפריט ניווט ותפריט המבורגר --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 2px solid var(--primary);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    direction: ltr;
+    flex-direction: row-reverse;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.menu-toggle {
+    display: none; /* מוסתר במחשב */
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 18px; 
+    margin: 0; 
+    padding: 0;
+    direction: ltr;
+    align-items: center;
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    white-space: nowrap;
+}
+.nav-links a:hover { color: var(--primary); }
+
+/* --- התאמות למובייל (תפריט נפתח ונסגר בלחיצה) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; 
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        padding: 5px;
+    }
+
+    .nav-links {
+        display: none; /* מוסתר כברירת מחדל בנייד */
+        flex-direction: column;
+        width: 100%;
+        background: #1e293b;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #334155;
+    }
+
+    /* כאשר ה-JS מוסיף את הקלאס active, התפריט נפתח */
+    .nav-links.active {
+        display: flex !important;
+    }
+}
