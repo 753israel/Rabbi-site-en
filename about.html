@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Yaakov & Gittel Institutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    
+    <nav class="navbar">
+        <div class="logo">Yaakov & Gittel Institutions</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soldiers.html">Work with IDF Soldiers</a></li>
+            <li><a href="families.html">Work with Families in Need</a></li>
+            <li><a href="community.html">Community Work</a></li>
+            <li><a href="about.html">About the Organization</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    
+    <div class="page-hero">
+        <h1>About Yaakov & Gittel Institutions</h1>
+        <p>Institutions serving IDF soldiers, families in need, and communities in northern Israel</p>
+        <div class="hero-divider"></div>
+    </div>
+
+    
+    <main class="container">
+
+        <div class="about-box">
+
+            
+            <div class="about-text">
+                <h2>About Rabbi Moshe Buganim, shlit"a</h2>
+
+                <div class="text-content">
+                    <p>
+                        Yakkov and Gittle Institutions was founded Twenty-five years ago by 
+                        <strong>Rabbi Moshe Buganim, shlit"a</strong>. Rabbi Buganim was born in Haifa, 
+                        served in the IDF, and currently resides in Tzfat. As a Lubavitcher chassid, 
+                        he follows the path of his Rebbe, educating fellow Jewish people and instilling 
+                        them with Jewish enthusiasm. Rabbi Buganim also tirelessly works to provide 
+                        financial aid and other help to impoverished families in Israel's North.
+                    </p>
+
+                    <p>
+                        מוסדות "יעקב וגיטל" הוקמו לפני עשרים וחמש שנים על ידי הרב משה בוגנים שליט"א. 
+                        Rabbi Buganim נולד בחיפה, שירת בצה"ל וכיום מתגורר בצפת. כחסיד חב"ד, הוא הולך בדרכו 
+                        של הרבי, מחנך יהודים ומחדיר בהם התלהבות יהודית. Rabbi Buganim פועל ללא לאות כדי 
+                        לספק סיוע כלכלי ועזרה למשפחות מעוטות יכולת בצפון הארץ.
+                    </p>
+                </div>
+
+                <h3>Activities</h3>
+                <ul class="activities-list">
+                    <li>Activities at IDF bases</li>
+                    <li>Hospital visits</li>
+                    <li>Home-visit program</li>
+                    <li>Food basket distribution</li>
+                    <li>Distributing tefillin to IDF soldiers</li>
+                    <li>Distributing infant formula</li>
+                    <li>Bringing joy to the Jewish people</li>
+                </ul>
+            </div>
+
+            
+            <div class="gallery">
+                <div class="card">
+                    <div class="card-media">
+                        <img src="home/home.jpg" class="clickable" alt="Rabbi Buganim">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about1.jpeg" class="clickable" alt="Recommendation 1">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about2.jpeg" class="clickable" alt="Recommendation 2">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about3.jpeg" class="clickable" alt="Recommendation 3">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about4.jpeg" class="clickable" alt="Recommendation 4">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="full-img" src="" alt="Full-size image">
+    </div>
+
+    
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

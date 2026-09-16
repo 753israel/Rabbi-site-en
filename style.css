@@ -1,0 +1,584 @@
+/* --- 1. Base Settings & Colors --- */
+:root {
+    --primary: #38bdf8;
+    --dark: #0f172a;
+    --card: rgba(30, 41, 59, 0.85);
+    --text: #f8fafc;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--dark) url('home/barund.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* --- 2. Navigation Menu (תפריט מתוקן באמת LTR) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 2px solid var(--primary);
+    position: relative; /* משў מ-sticky ל-relative כדי שלא יושפע מתוספים דוחפים למעלה */
+    top: 0;
+    z-index: 1000;
+    direction: ltr;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    white-space: nowrap;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 15px; 
+    margin: 0; 
+    padding: 0;
+    direction: ltr;
+    align-items: center;
+    flex-wrap: wrap; /* מונע מעיכה של הקישורים אם המסך קצת קטן */
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    white-space: nowrap;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* --- 3. Main Containers & Spacing --- */
+.container { 
+    max-width: 900px; 
+    width: 90%; 
+    margin: 30px auto; 
+    box-sizing: border-box;
+}
+
+/* --- 4. Page Hero (רוחב תואם לקונטיינר ורווח ברור מלמעלה) --- */
+.page-hero {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #38bdf8;
+    
+    /* מותאם בדיוק לרוחב של 900px כמו הקונטיינרים האחרים, עם רווח של 40px מלמעלה */
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto 30px auto; 
+    
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+    box-sizing: border-box;
+}
+
+.page-hero h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-hero p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-divider {
+    width: 80px;
+    height: 4px;
+    background: #38bdf8;
+    margin: 15px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* --- 5. Project Cards & Boxes --- */
+.project-box {
+    display: flex;
+    gap: 25px;
+    background: var(--card);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border-left: 6px solid var(--primary);
+    align-items: stretch;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.project-text { flex: 2; text-align: left; }
+.project-image { flex: 1; min-width: 250px; }
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--primary);
+}
+
+.contact-box {
+    text-align: center;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border: 2px solid #38bdf8;
+}
+
+.contact-info {
+    font-size: 1.2rem;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.highlight-contact {
+    color: #38bdf8;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+    margin-top: 10px;
+}
+
+/* --- Mobile Menu & Adjustments --- */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; 
+        font-size: 30px;
+        cursor: pointer;
+        color: white;
+        padding: 5px;
+    }
+
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        width: 100%;
+        background: #1e293b;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+        text-align: center;
+        padding: 20px 0;
+        border-top: 1px solid #334155;
+    }
+
+    .nav-links.active {
+        display: flex !important;
+    }
+
+    .project-box { 
+        flex-direction: column !important; 
+        border-left: 4px solid var(--primary) !important;
+    }
+    
+    .page-hero {
+        width: 90% !important;
+        margin: 30px auto 20px auto !important;
+    }
+}
+
+.about-box {
+    display: flex;
+    gap: 40px;
+    background: rgba(30, 41, 59, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.about-text { flex: 2; text-align: left; }
+.about-image { 
+    flex: 2; 
+    min-width: 150px; 
+    margin-top: 5px;
+    display: flex;         
+    flex-direction: column; 
+    gap: 20px;             
+}
+
+.about-image img {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .about-box { flex-direction: column-reverse; padding: 20px; }
+}
+
+.text-content p { margin-bottom: 20px; text-align: left; }
+.activities-list { columns: 2; gap: 20px; text-align: left; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
+}
+
+/* --- עיצוב מושלם לתמונות הקטנות בגלריה (ללא חיתוך וללא שטחים ריקים גדולים) --- */
+.card-media {
+    width: 100%;
+    background-color: #0f172a; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card-media img {
+    width: 100%;
+    height: auto;
+    max-height: 280px; /* גובה אחיד ומבוקר שלא יהיה ארוך מדי */
+    object-fit: contain; /* מציג את כל התמונה במלואה בלי לחתוך כלום */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-media img {
+    transform: scale(1.03); /* אפקט זום קל ועדין כשעוברים עם העכבר */
+}
+
+/* --- תיקון מוחלט ללייטבוקס (תמונה מלאה כשלוחצים עליה) --- */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.lightbox img {
+    max-width: 90vw;  /* תופס עד 90% מרוחב המסך */
+    max-height: 90vh; /* תופס עד 90% מגובה המסך */
+    width: auto;
+    height: auto;
+    object-fit: contain; /* מבטיח שבלייטבוקס רואים את כל התמונה בשלמותה בלי שום חיתוך בצדדים */
+    border-radius: 10px;
+    border: 2px solid #38bdf8;
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
+}
+
+.close, .close-btn {
+    position: absolute;
+    top: 25px; 
+    right: 35px;
+    font-size: 45px; 
+    color: #ffffff; 
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.close:hover, .close-btn:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+.content {
+    padding: 20px;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.content h3 {
+    color: #38bdf8;
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    border: 3px solid #fff;
+}
+
+.close {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 40px; color: white; cursor: pointer;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* --- 1. תפריט ניווט מסודר משמאל לימין --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 2px solid var(--primary);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    direction: ltr;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 18px; 
+    margin: 0; 
+    padding: 0;
+    direction: ltr;
+    align-items: center;
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    white-space: nowrap;
+}
+.nav-links a:hover { color: var(--primary); }
+
+/* --- 2. תיקון דף אודות (טקסט למעלה, גלריה מסודרת מתחתיו) --- */
+.about-box {
+    display: flex;
+    flex-direction: column; /* גורם לטקסט ולגלריה להיות אחד מתחת לשני ולא להידחס לצדדים */
+    gap: 30px;
+    background: rgba(30, 41, 59, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+    max-width: 900px;
+    width: 90%;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.about-text { 
+    width: 100%; 
+    text-align: left; 
+}
+
+.about-image { 
+    display: flex;         
+    flex-direction: column; 
+    gap: 20px;             
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+/* --- 3. תיקון הגלריות בכל האתר שלא יחרגו מהרוחב --- */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* גריד מסודר שמתאים את עצמו */
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* --- פתרון מושלם לכל התמונות בגלריה: הצגת התמונה המלאה ללא שום חיתוך --- */
+.card-media {
+    width: 100%;
+    background-color: #0f172a; /* רקע כהה מסביב לתמונה */
+    display: flex;
+    align-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.card-media img {
+    max-width: 100%;
+    max-height: 280px; /* מגביל את הגובה כך שתמונות לא יהיו ענקיות מדי */
+    width: auto;       /* שומר על הרוחב הפרופורציונלי המקורי */
+    height: auto;      /* שומר על הגובה הפרופורציונלי המקורי בלי למתוח */
+    object-fit: contain; /* מבטיח שרואים את כל התמונה בשלמותה ללא חיתוך */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+/* --- תפריט ניווט הפוך (לוגו מימין, קישורים משמאל) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom: 2px solid var(--primary);
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    direction: ltr;
+    flex-direction: row-reverse; /* הופך את הצדדים: הלוגו יזוז לימין והקישורים לשמאל */
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.1rem;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+    gap: 18px; 
+    margin: 0; 
+    padding: 0;
+    direction: ltr;
+    align-items: center;
+}
+
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: 500; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+    white-space: nowrap;
+}
+.nav-links a:hover { color: var(--primary); }
+/* --- יישור קו לכל הכותרות הראשיות בכל הדפים כך שיהיו בקונטיינר מרכזי --- */
+.page-hero, .page-header {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 40px 20px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #38bdf8;
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto 30px auto;
+    box-shadow: 0 10px 20px rgba(56, 189, 248, 0.15);
+    box-sizing: border-box;
+}
+
+.page-hero h1, .page-header h1 {
+    font-size: 2.2rem;
+    color: #ffffff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.page-hero p, .page-header p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}

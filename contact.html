@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — Yaakov & Gittel Institutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Yaakov & Gittel Institutions</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="soldiers.html">Work with IDF Soldiers</a></li>
+            <li><a href="families.html">Work with Families in Need</a></li>
+            <li><a href="community.html">Community Work</a></li>
+            <li><a href="about.html">About the Organization</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="page-hero">
+            <h1>Join Our Work</h1>
+            <p>Together, we can spread the light of kindness and change the lives of families, soldiers, and children in the community.</p>
+            <div class="hero-divider"></div>
+        </div>
+    
+        <div class="project-box">
+            <div class="project-text">
+                <h2>Support for Families</h2>
+                <ul class="activities-list">
+                    <li>Food basket for a family: <span class="highlight">$230 per family</span> (dozens of families benefit every week).</li>
+                    <li>Supermarket vouchers totaling <span class="highlight">$5,000</span> are distributed each week.</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <img src="images_families/families11.jpg" alt="Support for Families" class="clickable">
+            </div>
+        </div>
+
+        <div class="project-box">
+            <div class="project-text">
+                <h2>Flagship Project: Building a Home of Kindness</h2>
+                <p>Together, let us build our home—a global center of kindness in the holy city of Safed (project cost: <span class="highlight">$5.5 million</span>).</p>
+                <p>The center will include a synagogue, event hall, large kitchen, mikveh, and extensive children's activities.</p>
+            </div>
+            <div class="project-image">
+                <img src="home/770_Eastern_Parkway.jpg" alt="בניית בית של חסד" class="clickable">
+            </div>
+        </div>
+
+        <div class="project-box">
+            <div class="project-text">
+                <h2>Jewish Holidays and Festivals</h2>
+                <p>We make sure every family can celebrate with dignity and joy. Through the holiday project, we invest approximately <span class="highlight">$100,000 for each holiday</span>.</p>
+                <ul class="activities-list">
+                    <li>Financial grants distributed according to household size.</li>
+                    <li>Minimum assistance of <span class="highlight">$500 per family</span> to meet holiday needs.</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <img src="images_families/families14.jpg" alt="הוצאות חגי ישראל" class="clickable">
+            </div>
+        </div>
+
+        <div class="project-box">
+            <div class="project-text">
+                <h2>Support for Orphans and Widows</h2>
+                <p>We support widows and orphans with ongoing warmth, security, and care:</p>
+                <ul class="activities-list">
+                    <li>Food assistance and substantial shopping vouchers.</li>
+                    <li>Purchasing clothing and needed supplies, with financial support in times of crisis.</li>
+                    <li>Essential help with bills: <span class="highlight">electricity, municipal tax, and water</span>.</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <img src="images_families/families5.jpg" alt="יתומים ואלמנות" class="clickable">
+            </div>
+        </div>
+
+        <div class="project-box">
+            <div class="project-text">
+                <h2>Activities for IDF Soldiers (annual cost: $100,000)</h2>
+                <ul class="activities-list">
+                    <li>Barbecue evenings and distribution of tefillin and prayer shawls.</li>
+                    <li>Distribution of tens of thousands of Psalms books and Tanya books, and the dedication of a Torah scroll for the soldiers.</li>
+                </ul>
+            </div>
+            <div class="project-image">
+                <img src="images_soldiers/pic2.jpg" alt="פעילות לחיילי צה"ל" class="clickable">
+            </div>
+        </div>
+
+        <div class="project-box contact-box">
+            <div class="project-text">
+                <h2>Contact and Donations</h2>
+                <p class="contact-info">נשמח לעמוד לרשותכם לכל שאלה או סיוע:</p>
+                <p class="contact-info"> פלאפון📞: <span class="highlight-contact">052-5988533</span></p>
+                <p class="contact-info">Zelle 💳 :<span class="highlight-contact">moshebuganim770@gmail.com</span></p>
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="full-img" src="" alt="Full-size image">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

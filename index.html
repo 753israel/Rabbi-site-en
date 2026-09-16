@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yaakov & Gittel — Helping Families</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Yaakov & Gittel Institutions</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="soldiers.html">Work with IDF Soldiers</a></li>
+            <li><a href="families.html">Work with Families in Need</a></li>
+            <li><a href="community.html">Community Work</a></li>
+            <li><a href="about.html">About the Organization</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <audio autoplay loop>
+        <source src="music/muc1.mp3" type="audio/mp3">
+    </audio>
+
+    <main class="container">
+        <div class="page-hero">
+    <div class="main-title-container">
+        <h1 class="main-title">Yaakov & Gittel Institutions</h1>
+        <h2 class="sub-title">Yaakov & Gittel Institutions</h2>
+    </div>
+    <div class="hero-divider"></div>
+
+
+        <div class="about-box">
+            <div class="about-text">
+                <h2>Yaakov & Gittel — Doing Good with Heart and Soul</h2>
+                <p>The Yaakov & Gittel organization was founded on a deep mission to spread light, hope, and help wherever we meet someone in need of a helping hand <strong>in the holy city of Safed</strong>. Our work is a living, moving tapestry of sincere love for the Jewish people, extending across a wide range of areas.</p>
+                <p>We are proud to stand beside the brave IDF soldiers, offering encouragement and a warm embrace that reminds them how strongly the people stand behind them. Our hearts are with families in need, and we work every day to ensure that no table is left empty.</p>
+                <p>Joy is an inseparable part of who we are. We hold colorful Lag BaOmer parades that kindle the Jewish spirit, and provide meaningful, engaging activities for children. In everything we do, we live kindness, because we believe one good deed can change an entire world.</p>
+            </div>
+
+            <div class="about-image">
+                <img src="home/home.jpg" alt="Image" class="clickable">
+                <img src="home/rabi.jpg" alt="Image" class="clickable" >
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="full-img" src="" alt="Full-size image">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
+    <script>
+    // פונקציית פתיחה/סגירה של התפריט
+    function toggleMenu() {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    // סגירת התפריט אוטומטית כשלוחצים על קישור
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-links').classList.remove('active');
+        });
+    });
+
+    // פונקציית Lightbox (שכבר עובדת לך)
+    document.querySelectorAll('.clickable').forEach(img => {
+        img.addEventListener('click', () => {
+            const lightbox = document.getElementById('lightbox');
+            const fullImg = document.getElementById('full-img');
+            fullImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
